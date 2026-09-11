@@ -78,13 +78,3 @@ document.querySelector('.certificate-dialog-close').addEventListener('click', ()
 certificateDialog.addEventListener('click', (event) => {
   if (event.target === certificateDialog) certificateDialog.close();
 });
-
-const contactDialog = document.querySelector('#contact-dialog');
-document.querySelectorAll('[data-contact]').forEach((button) => {
-  button.addEventListener('click', () => contactDialog.showModal());
-});
-document.querySelector('.contact-dialog-close').addEventListener('click', () => contactDialog.close());
-document.querySelector('.dialog-ok').addEventListener('click', () => contactDialog.close());
-contactDialog.addEventListener('click', (event) => {
-  if (event.target === contactDialog) contactDialog.close();
-});
