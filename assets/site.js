@@ -67,7 +67,9 @@ cards.forEach((card) => {
 });
 
 document.querySelector('.service-dialog-close').addEventListener('click', () => serviceDialog.close());
-document.querySelector('.service-book').addEventListener('click', () => serviceDialog.close());
+document.querySelectorAll('.service-book, .service-book-alternative').forEach((link) => {
+  link.addEventListener('click', () => serviceDialog.close());
+});
 serviceDialog.addEventListener('click', (event) => {
   if (event.target === serviceDialog) serviceDialog.close();
 });

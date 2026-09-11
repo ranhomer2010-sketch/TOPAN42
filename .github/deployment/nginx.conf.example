@@ -1,0 +1,70 @@
+# Example for an Nginx server physically located in Russia.
+# NOT applied by GitHub Pages. Replace example.ru and certificate paths before use.
+# Include this file from the http context (for example, /etc/nginx/conf.d/).
+limit_req_zone $binary_remote_addr zone=angella_site:10m rate=20r/s;
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name example.ru;
+    access_log off;
+
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/acme;
+    }
+    location / {
+        return 301 https://example.ru$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name example.ru;
+    ssl_certificate /etc/letsencrypt/live/example.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.ru/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    server_tokens off;
+
+    root /srv/angella-site;
+    index index.html;
+    include /etc/nginx/mime.types;
+    autoindex off;
+    access_log off;
+    # Even critical error logs may contain IPs. Keep them in Russia,
+    # restrict access, rotate and remove them under an approved retention policy.
+    error_log /var/log/nginx/angella-error.log crit;
+
+    limit_req zone=angella_site burst=60 nodelay;
+    limit_req_status 429;
+    client_max_body_size 1k;
+    if ($request_method !~ ^(GET|HEAD)$) { return 405; }
+
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    add_header Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; worker-src 'none'; manifest-src 'none'; upgrade-insecure-requests" always;
+    add_header Referrer-Policy "no-referrer" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Cross-Origin-Opener-Policy "same-origin" always;
+
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+
+    location ~ /\. {
+        return 404;
+    }
+    location ~* \.(?:env|sql|sqlite|sqlite3|db|bak|log|pem|key)$ {
+        return 404;
+    }
+    location /assets/ {
+        expires 1d;
+        try_files $uri =404;
+    }
+    location / {
+        expires -1;
+        try_files $uri $uri/ =404;
+    }
+}
