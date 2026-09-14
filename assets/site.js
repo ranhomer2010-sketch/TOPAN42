@@ -126,7 +126,7 @@ const loadYandexMap = () => {
   if (mapContainer.querySelector('iframe')) return;
   const iframe = document.createElement('iframe');
   iframe.src = mapContainer.dataset.mapSrc;
-  iframe.title = 'Студия Анжеллы Лукьяновой на Яндекс Картах: адрес и отзывы';
+  iframe.title = 'Отзывы о студии Анжеллы Лукьяновой на Яндекс Картах';
   iframe.loading = 'lazy';
   iframe.referrerPolicy = 'no-referrer';
   iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox');
