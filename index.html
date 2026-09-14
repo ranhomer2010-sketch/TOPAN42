@@ -2,14 +2,24 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; worker-src 'none'; manifest-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src https://yandex.ru; object-src 'none'; base-uri 'none'; form-action 'none'; worker-src 'none'; manifest-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="x-dns-prefetch-control" content="off">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Авторские программы коррекции тела, омоложения лица и косметологического ухода Анжеллы Лукьяновой.">
+  <meta name="description" content="Студия авторского массажа Анжеллы Лукьяновой в Москве: коррекция тела, омоложение лица и косметологический уход. Скидка 50% на первое посещение.">
   <meta name="theme-color" content="#CCFBFA">
-  <title>Анжелла Лукьянова | Скульптор тела и лица</title>
-  <link rel="stylesheet" href="assets/styles.css?v=20260911-privacy">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Студия массажа Анжеллы Лукьяновой в Москве">
+  <meta property="og:description" content="Авторские программы для тела и лица. Скидка 50% на первое посещение.">
+  <meta property="og:url" content="https://ranhomer2010-sketch.github.io/TOPAN42/">
+  <meta property="og:image" content="https://ranhomer2010-sketch.github.io/TOPAN42/assets/photo-reception.webp">
+  <meta property="og:image:alt" content="Интерьер студии массажа Анжеллы Лукьяновой">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Студия массажа Анжеллы Лукьяновой в Москве</title>
+  <link rel="canonical" href="https://ranhomer2010-sketch.github.io/TOPAN42/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css?v=20260914-yandex">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -28,16 +38,22 @@
     <a class="header-cta" href="#contacts">Записаться</a>
   </header>
 
+  <nav class="mobile-nav" aria-label="Быстрая навигация">
+    <a href="#programs">Услуги</a>
+    <a href="#location">Карта</a>
+    <a class="mobile-nav-primary" href="#contacts">Запись</a>
+  </nav>
+
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Студия авторского массажа</p>
-        <h1>Тело. Лицо.<br><em>Твоя форма.</em></h1>
-        <p class="hero-lead">Ручные техники коррекции тела и естественного омоложения лица от Анжеллы Лукьяновой. Работаем бережно, точно и без шаблонных программ.</p>
+        <p class="eyebrow">Массаж тела и лица в Москве</p>
+        <h1>Тело. Лицо.<br><em>Ваша форма.</em></h1>
+        <p class="hero-lead">Авторские ручные техники Анжеллы Лукьяновой для коррекции тела и естественного омоложения лица. Студия находится на Складочной улице.</p>
         <a class="hero-offer" href="#offers">Скидка 50% на первое посещение</a>
         <div class="hero-actions">
-          <a class="button button-dark" href="#programs">Выбрать программу <span aria-hidden="true">↘</span></a>
-          <a class="text-link" href="#about">Познакомиться с Анжеллой</a>
+          <a class="button button-dark" href="#contacts">Записаться со скидкой <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#programs">Выбрать программу</a>
         </div>
         <dl class="hero-stats" aria-label="Опыт и квалификация">
           <div><dt>18</dt><dd>лет в индустрии<br>красоты</dd></div>
@@ -54,7 +70,7 @@
       <p class="section-number">Подход</p>
       <div>
         <h2 id="manifesto-title">Не маскируем.<br><span>Работаем с формой.</span></h2>
-        <p>Каждая программа собирается вокруг вашей задачи: уменьшить отёчность, улучшить тонус кожи, подчеркнуть контуры тела или вернуть лицу свежий, отдохнувший вид.</p>
+        <p>Подбираем программу под вашу задачу: уменьшить отёчность, улучшить тонус кожи, подчеркнуть контуры тела или вернуть лицу свежий вид.</p>
       </div>
     </section>
 
@@ -62,7 +78,7 @@
       <div class="section-head reveal">
         <div>
           <p class="section-number">Программы</p>
-          <h2 id="programs-title">Выбери свою<br><em>точку изменений</em></h2>
+          <h2 id="programs-title">Выберите свою<br><em>точку изменений</em></h2>
         </div>
         <p class="section-intro">Три направления, десять программ. Если сложно выбрать, начните с задачи, которую хотите решить.</p>
       </div>
@@ -83,15 +99,16 @@
             <div><h4>На курс из 5 сеансов</h4><p>При покупке курса массажа в день пробного сеанса.</p></div>
           </div>
         </div>
+        <p class="offer-note">Скидка 50% действует на первое посещение. Скидки на курсы применяются при покупке в день пробного сеанса. Подробности акции для выбранной процедуры подтвердим при записи.</p>
       </aside>
 
       <div class="program-tabs reveal" role="tablist" aria-label="Категории программ">
-        <button class="tab is-active" role="tab" aria-selected="true" data-filter="body">Коррекция тела</button>
-        <button class="tab" role="tab" aria-selected="false" data-filter="face">Омоложение лица</button>
-        <button class="tab" role="tab" aria-selected="false" data-filter="cosmetology">Косметология</button>
+        <button class="tab is-active" id="tab-body" role="tab" aria-selected="true" aria-controls="program-grid" tabindex="0" data-filter="body">Коррекция тела</button>
+        <button class="tab" id="tab-face" role="tab" aria-selected="false" aria-controls="program-grid" tabindex="-1" data-filter="face">Омоложение лица</button>
+        <button class="tab" id="tab-cosmetology" role="tab" aria-selected="false" aria-controls="program-grid" tabindex="-1" data-filter="cosmetology">Косметология</button>
       </div>
 
-      <div class="program-grid" id="program-grid">
+      <div class="program-grid" id="program-grid" role="tabpanel" aria-labelledby="tab-body">
         <button class="service-card coral reveal" type="button" data-category="body" data-service="detox">
           <span class="service-name">Детокс</span><strong>от 3 500 ₽</strong><span class="service-arrow">↗</span>
         </button>
@@ -107,19 +124,19 @@
         <button class="service-card coral reveal" type="button" data-category="body" data-service="flat-stomach">
           <span class="service-name">Плоский живот</span><strong>3 500 ₽</strong><span class="service-arrow">↗</span>
         </button>
-        <button class="service-card blush reveal" type="button" data-category="face" data-service="stop-age" hidden>
+        <button class="service-card blush reveal" type="button" data-category="face" data-service="stop-age">
           <span class="service-name">СтопВозраст</span><strong>3 500 ₽</strong><span class="service-arrow">↗</span>
         </button>
-        <button class="service-card aqua reveal" type="button" data-category="face" data-service="face-plastic" hidden>
+        <button class="service-card aqua reveal" type="button" data-category="face" data-service="face-plastic">
           <span class="service-name">Ручная пластика лица</span><strong>3 500 ₽</strong><span class="service-arrow">↗</span>
         </button>
-        <button class="service-card ice reveal" type="button" data-category="cosmetology" data-service="lifting" hidden>
+        <button class="service-card ice reveal" type="button" data-category="cosmetology" data-service="lifting">
           <span class="service-name">Лифтинг-комплекс</span><strong>5 000 ₽</strong><span class="service-arrow">↗</span>
         </button>
-        <button class="service-card coral reveal" type="button" data-category="cosmetology" data-service="cleaning" hidden>
+        <button class="service-card coral reveal" type="button" data-category="cosmetology" data-service="cleaning">
           <span class="service-name">Механическая чистка</span><strong>3 600 ₽</strong><span class="service-arrow">↗</span>
         </button>
-        <button class="service-card aqua reveal" type="button" data-category="cosmetology" data-service="regeneration" hidden>
+        <button class="service-card aqua reveal" type="button" data-category="cosmetology" data-service="regeneration">
           <span class="service-name">Очищение + регенерация</span><strong>4 600 ₽</strong><span class="service-arrow">↗</span>
         </button>
       </div>
@@ -197,6 +214,7 @@
         </figure>
       </div>
       <p class="results-note reveal">Фотографии опубликованы с согласия клиентов. Результат процедур индивидуален.</p>
+      <a class="button button-dark results-cta reveal" href="#contacts">Подобрать программу и записаться <span aria-hidden="true">↘</span></a>
     </section>
 
     <section class="visit section-pad" id="visit" aria-labelledby="visit-title">
@@ -244,7 +262,7 @@
         <p>В основе работы студии авторские ручные техники Анжеллы. Каждая программа адаптируется под человека, а не наоборот.</p>
       </div>
       <div class="values-list reveal">
-        <div><p>Ручные техники без аппаратной гонки</p></div>
+        <div><p>Авторские ручные техники массажа тела и лица</p></div>
         <div><p>Постоянное повышение квалификации</p></div>
         <div><p>Индивидуальный план процедур</p></div>
         <div><p>Честный разговор о возможном результате</p></div>
@@ -275,12 +293,39 @@
       </div>
     </section>
 
+    <section class="location section-pad" id="location" aria-labelledby="location-title">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-number">Карта и отзывы</p>
+          <h2 id="location-title">Найдите нас<br><em>на Яндекс Картах</em></h2>
+        </div>
+        <div class="location-copy">
+          <p>Москва, ул. Складочная, 1, стр. 5, БЦ «Гульден»</p>
+          <p>2 этаж, 5 линия, офис 2127. Ежедневно с 10:00 до 21:00.</p>
+        </div>
+      </div>
+      <div class="map-consent reveal" id="yandex-map" data-map-src="https://yandex.ru/map-widget/v1/?ll=37.594019%2C55.804668&amp;mode=search&amp;oid=124073549368&amp;ol=biz&amp;z=15">
+        <div class="map-consent-card" id="map-consent-card">
+          <p class="eyebrow">Внешний сервис</p>
+          <h3>Показать карту и отзывы</h3>
+          <p>До вашего согласия Яндекс Карты не загружаются. После нажатия Яндекс получит IP-адрес и технические данные браузера и может использовать cookies по своим правилам.</p>
+          <div class="map-consent-actions">
+            <button class="button button-dark" id="load-yandex-map" type="button">Согласиться и показать</button>
+            <a class="text-link" href="https://yandex.ru/maps/org/massazhny_kabinet_lukyanovoy_a_v_/124073549368/?ll=37.594019%2C55.804668&amp;z=15" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Открыть отдельно</a>
+          </div>
+          <p class="map-policy-link"><a href="privacy.html#cookies-title">Подробнее о cookies и обработке данных</a></p>
+        </div>
+      </div>
+      <p class="map-controls" id="map-controls" hidden><button type="button" id="unload-yandex-map">Отключить виджет и отозвать согласие</button></p>
+      <noscript><p class="map-noscript">Для встроенной карты требуется JavaScript. Вы можете <a href="https://yandex.ru/maps/org/massazhny_kabinet_lukyanovoy_a_v_/124073549368/?ll=37.594019%2C55.804668&amp;z=15" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">открыть адрес на Яндекс Картах</a>.</p></noscript>
+    </section>
+
     <section class="contact section-pad" id="contacts" aria-labelledby="contact-title">
       <div class="contact-copy reveal">
         <p class="section-number">Контакты и запись</p>
         <h2 id="contact-title">Начнём с<br><em>вашей задачи</em></h2>
         <address class="studio-address">
-          <p>ул. Складочная, 1, стр. 5</p>
+          <p>Москва, ул. Складочная, 1, стр. 5</p>
           <p>БЦ «Гульден», 2 этаж, 5 линия, офис 2127</p>
         </address>
         <p class="contact-hours">Ежедневно с 10:00 до 21:00</p>
@@ -311,9 +356,10 @@
     <div class="service-dialog-copy">
       <p class="eyebrow" id="service-dialog-category">Программа</p>
       <h2 id="service-dialog-title"></h2>
-      <div class="service-dialog-facts"><span id="service-dialog-duration"></span><strong id="service-dialog-price"></strong></div>
+      <div class="service-dialog-prices" id="service-dialog-prices" aria-label="Стоимость и длительность"></div>
       <p id="service-dialog-description"></p>
       <ul id="service-dialog-benefits"></ul>
+      <p class="service-offer-note">На первое посещение действует скидка 50%. Подробности акции подтвердим при записи.</p>
       <a class="button button-dark service-book" href="https://web.max.ru/165388422" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Записаться в MAX <span aria-hidden="true">↗</span></a>
       <a class="service-book-alternative" href="#contacts">Другие способы связи</a>
     </div>
@@ -334,6 +380,6 @@
     </div>
   </dialog>
 
-  <script src="assets/site.js?v=20260911-privacy" defer></script>
+  <script src="assets/site.js?v=20260914-yandex" defer></script>
 </body>
 </html>
