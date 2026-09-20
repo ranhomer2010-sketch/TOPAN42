@@ -13,6 +13,57 @@ const serviceData = {
   regeneration: { category: 'Косметология', title: 'Очищение + регенерация', art: 'assets/art-regeneration.webp', artAlt: 'Иллюстрация ручного очищения и ухода за лицом', prices: [['105 минут', '4 600 ₽']], description: 'Многоэтапная ручная программа: глубокое очищение, мягкое обновление кожи и нанесение восстанавливающего ухода.', benefits: ['глубокое очищение', 'обновление текстуры', 'восстановительный уход'] }
 };
 
+const contentApiUrl = 'https://angella-content-admin.pastel-seal-2668.chatgpt.site/api/content';
+
+const getContentValue = (content, path) => path.split('.').reduce((value, key) => value && value[key], content);
+
+const applyManagedContent = (content) => {
+  if (!content || typeof content !== 'object') return;
+
+  document.querySelectorAll('[data-content]').forEach((element) => {
+    const value = getContentValue(content, element.dataset.content);
+    if (typeof value === 'string') element.textContent = value;
+  });
+
+  document.querySelectorAll('[data-link-content]').forEach((element) => {
+    const value = getContentValue(content, element.dataset.linkContent);
+    if (typeof value === 'string' && /^https:\/\//.test(value)) element.href = value;
+  });
+
+  document.querySelectorAll('[data-mail-content]').forEach((element) => {
+    const value = getContentValue(content, element.dataset.mailContent);
+    if (typeof value === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      element.textContent = value;
+      element.href = `mailto:${value}`;
+    }
+  });
+
+  if (!Array.isArray(content.services)) return;
+  content.services.forEach((managedService) => {
+    const service = serviceData[managedService.id];
+    if (!service) return;
+    if (typeof managedService.title === 'string') service.title = managedService.title;
+    if (typeof managedService.description === 'string') service.description = managedService.description;
+    if (Array.isArray(managedService.prices)) {
+      service.prices = managedService.prices
+        .filter((item) => item && typeof item.duration === 'string' && typeof item.price === 'string' && item.duration && item.price)
+        .map((item) => [item.duration, item.price]);
+    }
+
+    const card = document.querySelector(`[data-service="${managedService.id}"]`);
+    if (!card) return;
+    const name = card.querySelector('.service-name');
+    const price = card.querySelector('strong');
+    if (name) name.textContent = service.title;
+    if (price && service.prices.length) price.textContent = `${service.prices.length > 1 ? 'от ' : ''}${service.prices[0][1]}`;
+  });
+};
+
+fetch(contentApiUrl, { mode: 'cors', credentials: 'omit', cache: 'no-store' })
+  .then((response) => response.ok ? response.json() : Promise.reject(new Error('content unavailable')))
+  .then((payload) => applyManagedContent(payload.content))
+  .catch(() => {});
+
 const tabs = Array.from(document.querySelectorAll('.tab'));
 const cards = Array.from(document.querySelectorAll('.service-card'));
 const programGrid = document.querySelector('#program-grid');

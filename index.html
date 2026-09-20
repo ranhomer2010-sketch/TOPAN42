@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; frame-src https://yandex.ru; object-src 'none'; base-uri 'none'; form-action 'none'; worker-src 'none'; manifest-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://angella-content-admin.pastel-seal-2668.chatgpt.site; frame-src https://yandex.ru; object-src 'none'; base-uri 'none'; form-action 'none'; worker-src 'none'; manifest-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="x-dns-prefetch-control" content="off">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
   <title>Студия массажа Анжеллы Лукьяновой в Москве</title>
   <link rel="canonical" href="https://ranhomer2010-sketch.github.io/TOPAN42/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css?v=20260920-vacancy">
+  <link rel="stylesheet" href="assets/styles.css?v=20260920-vacancy-hero">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -49,13 +49,14 @@
       <div class="hero-copy reveal">
         <p class="eyebrow">Массаж тела и лица в Москве</p>
         <h1>Тело. Лицо.<br><em>Ваша форма.</em></h1>
-        <p class="hero-lead">Авторские ручные техники Анжеллы Лукьяновой для коррекции тела и естественного омоложения лица. Студия находится на Складочной улице.</p>
+        <p class="hero-lead" data-content="general.heroLead">Авторские ручные техники Анжеллы Лукьяновой для коррекции тела и естественного омоложения лица. Студия находится на Складочной улице.</p>
         <a class="hero-offer" href="#offers">
-          <strong>−50% на первое посещение</strong>
-          <span>Для нового гостя. Программу и итоговую стоимость подтвердим перед записью.</span>
+          <strong data-content="general.firstVisitOffer">−50% на первое посещение</strong>
+          <span data-content="general.firstVisitNote">Для нового гостя. Программу и итоговую стоимость подтвердим перед записью.</span>
         </a>
         <div class="hero-actions">
           <a class="button button-dark" href="#contacts">Записаться со скидкой <span aria-hidden="true">↘</span></a>
+          <a class="button hero-vacancy-button" href="#vacancy">Ищем массажистов <span aria-hidden="true">↓</span></a>
           <a class="text-link" href="#programs">Выбрать программу</a>
         </div>
         <dl class="hero-stats" aria-label="Опыт и квалификация">
@@ -88,11 +89,11 @@
           </div>
           <div class="offer">
             <strong>20%</strong>
-            <div><h4>На курс из 10 сеансов</h4><p>Действует, если оформить курс массажа в день пробного сеанса.</p></div>
+            <div><h4>На курс из 10 сеансов</h4><p data-content="general.course10Offer">При покупке курса из 10 сеансов в день пробного посещения — скидка 20%.</p></div>
           </div>
           <div class="offer">
             <strong>15%</strong>
-            <div><h4>На курс из 5 сеансов</h4><p>Действует, если оформить курс массажа в день пробного сеанса.</p></div>
+            <div><h4>На курс из 5 сеансов</h4><p data-content="general.course5Offer">При покупке курса из 5 сеансов в день пробного посещения — скидка 15%.</p></div>
           </div>
         </div>
         <div class="offer-details">
@@ -258,9 +259,9 @@
       <div class="section-head reveal">
         <div>
           <p class="section-number">Открыта вакансия</p>
-          <h2 id="vacancy-title">Ищем<br><em>массажистов</em></h2>
+          <h2 id="vacancy-title" data-content="vacancy.title">Ищем массажистов</h2>
         </div>
-        <p class="section-intro">Приглашаем опытных специалистов и новичков, которые хотят освоить востребованную профессию и расти до уровня ВИП-мастера.</p>
+        <p class="section-intro" data-content="vacancy.intro">Приглашаем опытных специалистов и новичков, которые хотят освоить востребованную профессию и расти до уровня ВИП-мастера.</p>
       </div>
 
       <div class="vacancy-grid">
@@ -269,7 +270,7 @@
           <h3>Работа с телом<br>и лицом</h3>
           <ul>
             <li>Знание классических техник будет преимуществом</li>
-            <li>Доход от 100 000 ₽: процент от выручки</li>
+            <li data-content="vacancy.income">Доход от 100 000 ₽: процент от выручки</li>
             <li>Возможность вырасти до уровня ВИП-мастера</li>
             <li>Заботливая атмосфера женской студии</li>
           </ul>
@@ -278,7 +279,7 @@
         <article class="vacancy-card vacancy-card-light reveal">
           <p class="vacancy-label">Для новичков без опыта</p>
           <h3>Обучим с нуля<br>за одну неделю</h3>
-          <p>Первый этап обучения стоит 19 000 ₽. За неделю вы освоите базу, поработаете в парах, попробуете техники на себе и пройдёте практику на моделях в студии.</p>
+          <p><strong data-content="vacancy.trainingPrice">Первый этап обучения — 19 000 ₽</strong>. <span data-content="vacancy.trainingText">За неделю вы освоите базу, поработаете в парах, попробуете техники на себе и пройдёте практику на моделях в студии.</span></p>
           <ul>
             <li>Техники массажа тела и лица</li>
             <li>Подготовка к работе сразу после обучения</li>
@@ -290,11 +291,11 @@
       <div class="vacancy-bottom reveal">
         <div>
           <p class="vacancy-label">Что важно</p>
-          <p>Медицинская книжка обязательна. Также ждём нацеленность на результат, желание работать и зарабатывать, коммуникабельность и клиентоориентированность.</p>
+          <p data-content="vacancy.requirements">Медицинская книжка обязательна. Также ждём нацеленность на результат, желание работать и зарабатывать, коммуникабельность и клиентоориентированность.</p>
         </div>
         <div class="vacancy-actions">
-          <a class="button button-dark" href="https://web.max.ru/165388422" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Откликнуться в MAX <span aria-hidden="true">↗</span></a>
-          <a class="vacancy-link" href="https://wa.me/message/MFKTMERDPEEUL1?src=qr" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Написать в WhatsApp</a>
+          <a class="button button-dark" data-link-content="general.maxUrl" href="https://web.max.ru/165388422" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Откликнуться в MAX <span aria-hidden="true">↗</span></a>
+          <a class="vacancy-link" data-link-content="general.whatsappUrl" href="https://wa.me/message/MFKTMERDPEEUL1?src=qr" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Написать в WhatsApp</a>
         </div>
       </div>
       <p class="vacancy-note reveal">Подробности об условиях работы и следующих этапах обучения обсудим на собеседовании.</p>
@@ -364,20 +365,17 @@
       <div class="contact-copy reveal">
         <p class="section-number">Контакты и запись</p>
         <h2 id="contact-title">Начнём с<br><em>вашей задачи</em></h2>
-        <address class="studio-address">
-          <p>Москва, ул. Складочная, 1, стр. 5</p>
-          <p>БЦ «Гульден», 2 этаж, 5 линия, офис 2127</p>
-        </address>
-        <p class="contact-hours">Ежедневно с 10:00 до 21:00</p>
+        <address class="studio-address"><p data-content="general.address">ул. Складочная, 1 стр. 5, БЦ «Гульден», 2 этаж, 5 линия, офис 2127</p></address>
+        <p class="contact-hours" data-content="general.hours">Ежедневно с 10:00 до 21:00</p>
       </div>
       <div class="contact-actions reveal">
-        <a class="contact-button contact-button-primary" href="https://web.max.ru/165388422" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
+        <a class="contact-button contact-button-primary" data-link-content="general.maxUrl" href="https://web.max.ru/165388422" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
           <span class="contact-button-main"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 17V7l7 6 7-6v10"/></svg></span><span>Записаться в MAX</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="contact-button" href="https://wa.me/message/MFKTMERDPEEUL1?src=qr" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
+        <a class="contact-button" data-link-content="general.whatsappUrl" href="https://wa.me/message/MFKTMERDPEEUL1?src=qr" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
           <span class="contact-button-main"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M9 8.5c.5 3.3 3.1 5.9 6.5 6.5l1-1.8-2.1-1-1 1c-1.2-.5-2.1-1.4-2.6-2.6l1-1-1-2.1L9 8.5Z"/></svg></span><span>Записаться в WhatsApp</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="contact-button contact-button-booking" href="https://dikidi.ru/1643378?p=0.pi" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
+        <a class="contact-button contact-button-booking" data-link-content="general.dikidiUrl" href="https://dikidi.ru/1643378?p=0.pi" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
           <span class="contact-button-main"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="13" rx="2"/><path d="M8 4v4m8-4v4M5 10h14m-10 4 2 2 4-4"/></svg></span><span>Записаться онлайн в DIKIDI</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
         </a>
         <a class="contact-button" href="https://yandex.ru/maps/org/massazhny_kabinet_lukyanovoy_a_v_/124073549368/reviews/?ll=37.594019%2C55.804668&amp;z=15" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
@@ -392,7 +390,7 @@
   <footer>
     <div class="brand footer-brand"><span class="brand-mark">A</span><span class="brand-copy">Анжелла<br><small>body &amp; face</small></span></div>
     <div class="footer-details">
-      <p class="footer-business">ИП Лукьянова А. В.<br>Лукьянова Анжелла Викторовна<br>ИНН 740400545589<br><a href="mailto:3006787@bk.ru">3006787@bk.ru</a></p>
+      <p class="footer-business">ИП Лукьянова А. В.<br>Лукьянова Анжелла Викторовна<br>ИНН 740400545589<br><a data-mail-content="general.email" href="mailto:3006787@bk.ru">3006787@bk.ru</a></p>
       <p>Результат процедур индивидуален. Информация на сайте не заменяет консультацию специалиста.</p>
       <a class="privacy-link" href="privacy.html">Политика обработки персональных данных</a>
     </div>
@@ -409,7 +407,7 @@
       <p id="service-dialog-description"></p>
       <ul id="service-dialog-benefits"></ul>
       <p class="service-offer-note">На первое посещение действует скидка 50%. Подробности акции подтвердим при записи.</p>
-      <a class="button button-dark service-book" href="https://web.max.ru/165388422" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Записаться в MAX <span aria-hidden="true">↗</span></a>
+      <a class="button button-dark service-book" data-link-content="general.maxUrl" href="https://web.max.ru/165388422" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Записаться в MAX <span aria-hidden="true">↗</span></a>
       <a class="service-book-alternative" href="#contacts">Другие способы связи</a>
     </div>
   </dialog>
@@ -429,6 +427,6 @@
     </div>
   </dialog>
 
-  <script src="assets/site.js?v=20260916-manual-care" defer></script>
+  <script src="assets/site.js?v=20260920-content-admin" defer></script>
 </body>
 </html>
