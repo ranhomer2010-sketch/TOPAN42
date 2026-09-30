@@ -13,7 +13,9 @@ const serviceData = {
   regeneration: { category: 'Косметология', title: 'Очищение + регенерация', art: 'assets/art-regeneration.webp', artAlt: 'Иллюстрация ручного очищения и ухода за лицом', prices: [['105 минут', '4 600 ₽']], description: 'Многоэтапная ручная программа: глубокое очищение, мягкое обновление кожи и нанесение восстанавливающего ухода.', benefits: ['глубокое очищение', 'обновление текстуры', 'восстановительный уход'] }
 };
 
-const contentApiUrl = window.ANGELLA_CONTENT_API || '/api/content.php';
+const contentApiUrl = typeof window.ANGELLA_CONTENT_API === 'string'
+  ? window.ANGELLA_CONTENT_API.trim()
+  : '';
 
 const getContentValue = (content, path) => path.split('.').reduce((value, key) => value && value[key], content);
 
@@ -59,14 +61,16 @@ const applyManagedContent = (content) => {
   });
 };
 
-const contentController = new AbortController();
-const contentTimeout = window.setTimeout(() => contentController.abort(), 4000);
+if (contentApiUrl) {
+  const contentController = new AbortController();
+  const contentTimeout = window.setTimeout(() => contentController.abort(), 4000);
 
-fetch(contentApiUrl, { mode: 'cors', credentials: 'omit', cache: 'no-store', signal: contentController.signal })
-  .then((response) => response.ok ? response.json() : Promise.reject(new Error('content unavailable')))
-  .then((payload) => applyManagedContent(payload.content))
-  .catch(() => {})
-  .finally(() => window.clearTimeout(contentTimeout));
+  fetch(contentApiUrl, { mode: 'cors', credentials: 'omit', cache: 'no-store', signal: contentController.signal })
+    .then((response) => response.ok ? response.json() : Promise.reject(new Error('content unavailable')))
+    .then((payload) => applyManagedContent(payload.content))
+    .catch(() => {})
+    .finally(() => window.clearTimeout(contentTimeout));
+}
 
 const tabs = Array.from(document.querySelectorAll('.tab'));
 const cards = Array.from(document.querySelectorAll('.service-card'));
